@@ -1,0 +1,71 @@
+<html>  
+<head>  
+    <link rel = "stylesheet" type = "text/css" href = "css/login_styles.css">   
+   <link rel="stylesheet" type="text/css" href="css/forms.css">
+    
+</head>  
+<body>  
+
+
+	
+    <div id = "frm">  
+        <h1>Registration</h1>  
+        <form name="f1" action = "php/register.php" onsubmit = "return validation()" method = "POST">  
+            <p>  
+                <label> Username: </label>  
+                <input type = "text" id ="username" name  = "username" />  
+            </p>
+
+            <p>  
+                <label> Password: </label>  
+                <input type = "password" id ="password" name  = "password" />  
+            </p>  
+            <p>  
+                <label> Confirm Password: </label>  
+                <input type = "password" id ="Confirm_password" name  = "Confirm_password" />  
+            </p>  
+            <p>     
+                <input type =  "submit" id = "btn" value = "Register" />  
+            </p>  
+            <span><a style = "float: centre; font-size: 15px; color: blue;" href="login.html"> Do you have have an account?</a></span>
+       </form>  
+    </div>  
+   
+
+    <script>  
+            function validation()  
+            {  
+                var username=document.f1.username.value;  
+                var password=document.f1.password.value;    
+                var re_password=document.f1.Confirm_password.value; 
+                if(username.length=="" && password.length=="" && re_password.length=="") {  
+                    alert("All fields are empty");  
+                    return false;  
+                }  
+                else  
+                {  
+                    if (username.length=="") {  
+                    alert("UserName field is empty");  
+                    return false;  
+                    } 
+                    if (password.length=="") {  
+                    alert("Password field is empty");  
+                    return false;  
+                    }  
+                    if (re_password.length=="") {  
+                    alert("Confirm Password field is empty");  
+                    return false;  
+                    } 
+                    if (password != re_password) {
+                    alert("Passwords dont match!");  
+                    return false;     
+                    } 
+                      
+                }                             
+            }  
+        </script>  
+
+        
+</body> 
+
+</html>  
